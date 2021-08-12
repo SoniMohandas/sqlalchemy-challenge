@@ -36,7 +36,6 @@ def home():
         f"/api/v1.0/<start>/<end>"   
     )
 
-
 # Convert the query results to a dictionary using date as the key and prcp as the value.Return the JSON representation of your dictionary
 
 @app.route("/api/v1.0/precipitation")
@@ -57,7 +56,7 @@ def stations():
     result=[]
     for stat in station:
         result.append(stat[0])
-    return jsonify(result)
+    return jsonify(f"List of stations:{result}")
 
 #Query the dates and temperature observations of the most active station for the last year of data.Return a JSON list of temperature observations (TOBS) for the previous year.
 
@@ -68,7 +67,8 @@ def tobs():
     result=[]
     for temp in twelve_month_tobs:
         result.append(temp[1])
-    return jsonify(result)
+    return jsonify(f"List of temperature observations of most active station: {result}")
+   
 
 @app.route("/api/v1.0/<start>")
 def temp_start(start):
