@@ -18,6 +18,8 @@ Plot the results using the DataFrame plot method.
 
 ![prcp](https://user-images.githubusercontent.com/83611005/129138741-a1d15c51-aca7-46c8-9b11-92827a22e680.png)
 
+![prcp1](https://user-images.githubusercontent.com/83611005/129243489-d146ce9e-b227-484b-827f-62fc82d99b7e.png)
+
 ![tobs](https://user-images.githubusercontent.com/83611005/129138760-581b6434-5707-407a-b55a-f33a6aad6bd8.png)
 
 ![temp](https://user-images.githubusercontent.com/83611005/129138766-42ab93e0-c128-42c0-9433-b04c451a55f0.png)
