@@ -24,9 +24,11 @@ Plot the results as a histogram with bins=12.
 
 ![tobs](https://user-images.githubusercontent.com/83611005/129138760-581b6434-5707-407a-b55a-f33a6aad6bd8.png)
 
-
+# Temperature Analysis I
 
 ![temp](https://user-images.githubusercontent.com/83611005/129138766-42ab93e0-c128-42c0-9433-b04c451a55f0.png)
+
+# Temperature Analysis II
 
 ![normals](https://user-images.githubusercontent.com/83611005/129138773-bf0f7f61-36a2-4c4e-bbd1-1f01787a6b9f.png)
 
