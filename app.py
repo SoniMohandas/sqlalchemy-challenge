@@ -17,11 +17,11 @@ Base.prepare(engine, reflect=True)
 Measurement = Base.classes.measurement
 Station = Base.classes.station
 
-# Create Session
+# Create Session to DB
 session = Session(engine)
 
 # Flask Setup
-app=Flask(__name__)
+app = Flask(__name__)
 
 # Flask Routes
 @app.route('/')
@@ -46,9 +46,7 @@ def precipitation():
     prcp_dict={}
     for data in prcp_data:
         prcp_dict[data.date]=data.prcp
-    return (
-        f"Precipitation data with date as key<br>"
-    )
+   
     return jsonify(prcp_dict)
 
 # Return a JSON list of stations from the dataset.
@@ -65,8 +63,7 @@ def stations():
 
 @app.route("/api/v1.0/tobs")
 def tobs():
-    twelve_month_tobs=session.query(Measurement.date,Measurement.tobs).\
-                   filter(Measurement.station=='USC00519281', Measurement.date>"2016-08-23").all()
+    twelve_month_tobs=session.query(Measurement.date,Measurement.tobs).filter(Measurement.station=='USC00519281', Measurement.date>"2016-08-23").all()
     
     result=[]
     for temp in twelve_month_tobs:
@@ -75,8 +72,7 @@ def tobs():
 
 @app.route("/api/v1.0/<start>")
 def temp_start(start):
-    results=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),\
-                          func.max(Measurement.tobs)).filter(Measurement.date>start).all()
+    results=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),func.max(Measurement.tobs)).filter(Measurement.date>start).all()
     result_set={}
     result_set["Lowest Temperature"]=results[0][0]
     result_set["Average Temperature"]=results[0][1]
@@ -85,14 +81,13 @@ def temp_start(start):
 
 @app.route("/api/v1.0/<start>/<end>")
 def temp_start_end(start, end):
-    results=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),\
-                          func.max(Measurement.tobs)).\
-    filter(Measurement.date>start).filter(Measurement.date<end).all()
+    results=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),func.max(Measurement.tobs)).filter(Measurement.date>start).filter(Measurement.date<end).all()
    
     result_set={}
     result_set["Lowest Temperature"]=results[0][0]
     result_set["Average Temperature"]=results[0][1]
     result_set["Highest Temperature"]=results[0][2]
     return jsonify(result_set)
+
 if __name__ == '__main__':
     app.run(debug=True)
