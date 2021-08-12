@@ -24,11 +24,14 @@ Plot the results as a histogram with bins=12.
 
 ![tobs](https://user-images.githubusercontent.com/83611005/129138760-581b6434-5707-407a-b55a-f33a6aad6bd8.png)
 
-# Temperature Analysis I
+# Temperature Analysis
+The starter notebook contains a function called calc_temps that will accept a start date and end date in the format %Y-%m-%d. The function will return the minimum, average, and maximum temperatures for that range of dates. Use the calc_temps function to calculate the min, avg, and max temperatures for your trip using the matching dates.
+Plot the min, avg, and max temperature from your previous query as a bar chart. Use the average temperature as the bar height. Use the peak-to-peak (TMAX-TMIN) value as the y error bar (YERR).
 
 ![temp](https://user-images.githubusercontent.com/83611005/129138766-42ab93e0-c128-42c0-9433-b04c451a55f0.png)
 
-# Temperature Analysis II
+# Daily Rainfall Average
+Calculate the rainfall per weather station using the previous year's matching trip dates. Create a list of dates for the trip in the format %m-%d. Use hisdtoric TOBS that match the date string. Calculate the daily normals means min, avg, and max temperatures for each date string and append the results to a list. Load the list of daily normals into a Pandas DataFrame and set the index equal to the date. Use Pandas to plot an area plot (stacked=False) for the daily normals.
 
 ![normals](https://user-images.githubusercontent.com/83611005/129138773-bf0f7f61-36a2-4c4e-bbd1-1f01787a6b9f.png)
 
